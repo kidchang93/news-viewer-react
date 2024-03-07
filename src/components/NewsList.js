@@ -16,9 +16,17 @@ const NewsList = () => {
     };
     fetchData();
   }, []);
+  if (loading) {
+    return <>대기중...</>;
+  }
+  if (!articles) {
+    return null;
+  }
   return (
     <>
-      <NewsItem />
+      {articles.map((article) => (
+        <NewsItem key={article.url} article={article} />
+      ))}
     </>
   );
 };
