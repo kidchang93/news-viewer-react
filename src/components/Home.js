@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from '../../node_modules/react-router-dom/dist/index';
 
 const Home = () => {
   return (
@@ -10,9 +11,9 @@ const Home = () => {
           헤드라인을 찾아보세요.
         </p>
         <p>
-          <a href="#" className="btn btn-primary my-2">
+          <Link to="/news" className="btn btn-primary my-2">
             메뉴 이동
-          </a>
+          </Link>
         </p>
       </div>
     </section>
