@@ -5,11 +5,6 @@ const NewsItem = ({ article }) => {
   return (
     <div className="col-md-6">
       <div className="card mb-4 box-shadow">
-        <img
-          className="card-img-top"
-          src="https://placehold.co/160X80"
-          alt="Card image cap"
-        />
         {urlToImage && (
           <img className="card-img-top" src={urlToImage} alt="Card image cap" />
         )}
