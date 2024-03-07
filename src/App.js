@@ -1,19 +1,16 @@
 import React, { useState } from 'react';
 import axios from '../node_modules/axios/index';
+import { Route, Routes } from '../node_modules/react-router-dom/dist/index';
+import Layout from './components/Layout';
+import Home from './components/Home';
 
 const App = () => {
-  const [data, setData] = useState(null);
-  const onClick = async () => {
-    const response = await axios.get(
-      'https://jsonplaceholder.typicode.com/todos/1',
-    );
-    setData(response);
-  };
   return (
-    <div>
-      <button onClick={onClick}>불러오기</button>
-      <div>{data && <textarea value={JSON.stringify(data, null, 2)} />}</div>
-    </div>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<Home />} />
+      </Route>
+    </Routes>
   );
 };
 
